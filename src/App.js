@@ -10,6 +10,7 @@ import RemoveFavourites from './components/RemoveFavourites';
 const App = () => {
 	const [favourites, setFavourites] = useState([]);
 	const [searchValue, setSearchValue] = useState('');
+	const omdbApiKey = process.env.OMDB_API_KEY
 	const [movies, setMovies] = useState([
 		{
 			Title: 'Star Wars: Episode IV - A New Hope',
@@ -72,7 +73,7 @@ const App = () => {
 	]);
 
 	const getMovieRequest = async (searchValue) => {
-		const url = `http://www.omdbapi.com/?s=${searchValue}&apikey=ba5bdde5`;
+		const url = `http://www.omdbapi.com/?s=${searchValue}&apikey=${omdbApiKey }`;
 
 		const response = await fetch(url);
 		const responseJson = await response.json();
