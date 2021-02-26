@@ -6,11 +6,13 @@ import MovieListHeading from './components/MovieListHeading';
 import SearchBox from './components/SearchBox';
 import AddFavourites from './components/AddFavourites';
 import RemoveFavourites from './components/RemoveFavourites';
+console.log(process.env.REACT_APP_OMDB_API_KEY)
 
 const App = () => {
 	const [favourites, setFavourites] = useState([]);
 	const [searchValue, setSearchValue] = useState('');
-	const omdbApiKey = process.env.OMDB_API_KEY
+	const omdbApiKey = process.env.REACT_APP_OMDB_API_KEY
+
 	const [movies, setMovies] = useState([
 		{
 			Title: 'Star Wars: Episode IV - A New Hope',
