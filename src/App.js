@@ -6,12 +6,10 @@ import MovieListHeading from './components/MovieListHeading';
 import SearchBox from './components/SearchBox';
 import AddFavourites from './components/AddFavourites';
 import RemoveFavourites from './components/RemoveFavourites';
-console.log(process.env.REACT_APP_OMDB_API_KEY)
 
 const App = () => {
 	const [favourites, setFavourites] = useState([]);
 	const [searchValue, setSearchValue] = useState('');
-	const omdbApiKey = process.env.REACT_APP_OMDB_API_KEY
 
 	const [movies, setMovies] = useState([
 		{
@@ -75,7 +73,7 @@ const App = () => {
 	]);
 
 	const getMovieRequest = async (searchValue) => {
-		const url = `http://www.omdbapi.com/?s=${searchValue}&apikey=${omdbApiKey }`;
+		const url = `http://www.omdbapi.com/?s=${searchValue}&apikey=${process.env.REACT_APP_OMDB_API_KEY}`;
 
 		const response = await fetch(url);
 		const responseJson = await response.json();
