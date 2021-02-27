@@ -73,7 +73,7 @@ const App = () => {
 	]);
 
 	const getMovieRequest = async (searchValue) => {
-		const url = `http://www.omdbapi.com/?s=${searchValue}&apikey=${apikey}`;
+		const url = `https://www.omdbapi.com/?s=${searchValue}&apikey=${apikey}`;
 
 		const response = await fetch(url);
 		const responseJson = await response.json();
@@ -130,7 +130,7 @@ const App = () => {
 				/>
 			</div>
 			<div className='row d-flex align-items-center mt-4 mb-4'>
-				<MovieListHeading heading='Liked' />
+				<MovieListHeading heading='Favourites' />
 			</div>
 			<div className='row'>
 				<MovieList
