@@ -130,7 +130,7 @@ const App = () => {
 				/>
 			</div>
 			<div className='row d-flex align-items-center mt-4 mb-4'>
-				<MovieListHeading heading='Favourites' />
+				<MovieListHeading heading='Liked' />
 			</div>
 			<div className='row'>
 				<MovieList
